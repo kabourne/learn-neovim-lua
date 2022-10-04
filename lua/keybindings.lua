@@ -25,8 +25,8 @@ map("n", "$", "g_", opt)
 map("n", "g_", "$", opt)
 
 -- 命令行下 Ctrl+j/k  上一个下一个
-map("c", "<C-j>", "<C-n>", { noremap = false })
-map("c", "<C-k>", "<C-p>", { noremap = false })
+-- map("c", "<C-j>", "<C-n>", { noremap = false })
+-- map("c", "<C-k>", "<C-p>", { noremap = false })
 
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>wq", ":wqa!<CR>", opt)
@@ -41,8 +41,8 @@ map("n", "<C-k>", "5k", opt)
 map("v", "<C-j>", "5j", opt)
 map("v", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-u>", "10k", opt)
-map("n", "<C-d>", "10j", opt)
+map("n", "<C-u>", "3<C-y>", opt)
+map("n", "<C-d>", "3<C-e>", opt)
 
 -- magic search
 map("n", "/", "/\\v", { noremap = true, silent = false })
@@ -118,7 +118,7 @@ map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
 local pluginKeys = {}
 
 -- treesitter 折叠
-map("n", "zz", ":foldclose<CR>", opt)
+-- map("n", "zz", ":foldclose<CR>", opt)
 map("n", "Z", ":foldopen<CR>", opt)
 
 -- nvim-tree
@@ -126,8 +126,8 @@ map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = { -- 打开文件或文件夹
-  { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-  { key = "<CR>", action = "system_open" },
+  { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+  -- { key = "<CR>", action = "system_open" },
   -- v分屏打开文件
   { key = "v", action = "vsplit" },
   -- h分屏打开文件
